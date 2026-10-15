@@ -1,0 +1,47 @@
+/* Editorial Minimalist Stylesheet */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F9F8F6;
+    color: #1C1917;
+}
+
+.editorial-card {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px -6px rgba(28, 25, 23, 0.08);
+    border-color: #A8A29E;
+}
+
+.editorial-card img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card:hover img {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #F9F8F6;
+}
+::-webkit-scrollbar-thumb {
+    background: #D6D3D1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #A8A29E;
+}
