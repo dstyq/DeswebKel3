@@ -3,6 +3,17 @@ let activeFaculty = 'all';
 
 function filterCategory(category) {
     activeCategory = category;
+    
+    const tabs = document.querySelectorAll('.filter-tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('bg-stone-900', 'text-white');
+    });
+
+    const activeTab = document.getElementById(`tab-${category}`);
+    if(activeTab) {
+        activeTab.classList.add('bg-stone-900', 'text-white');
+    }
+
     applyFilters();
 }
 
@@ -79,30 +90,29 @@ function submitProduct(e) {
     const defaultImg = "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80";
 
     const newCardHTML = `
-        <div class="product-card bg-white rounded-3xl border-2 border-stone-900 overflow-hidden shadow-[4px_4px_0px_0px_#1c1917] flex flex-col justify-between" data-category="${category}" data-faculty="${faculty}" data-title="${title}">
+        <div class="product-card bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-2xs flex flex-col justify-between" data-category="${category}" data-faculty="${faculty}" data-title="${title}">
             <div>
-                <div class="relative h-56 bg-amber-50 border-b-2 border-stone-900 p-4 flex items-center justify-center overflow-hidden">
-                    <div class="sticker-badge bg-[#D9381E] text-white">
-                        <span class="text-[9px] font-black uppercase">Baru</span>
-                    </div>
-                    <img src="${defaultImg}" alt="${title}" class="w-full h-full object-cover rounded-xl border border-stone-900">
+                <div class="relative h-52 bg-stone-100 overflow-hidden border-b border-stone-100">
+                    <span class="absolute top-3 left-3 bg-stone-900 text-white text-[9px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">${category}</span>
+                    <span class="absolute top-3 right-3 bg-sky-100 text-sky-800 text-[9px] font-extrabold px-2 py-1 rounded-md">Baru Diunggah</span>
+                    <img src="${defaultImg}" alt="${title}" class="w-full h-full object-cover">
                 </div>
                 <div class="p-5">
-                    <div class="flex items-center justify-between text-[10px] font-extrabold mb-1">
-                        <span class="bg-amber-100 text-stone-900 px-2 py-0.5 rounded-md border border-stone-900">${faculty} &bull; Mahasiswa</span>
-                        <span class="text-stone-400">Baru</span>
+                    <div class="flex items-center justify-between text-[11px] font-bold text-stone-500 mb-1">
+                        <span class="text-[#991B1B] uppercase tracking-wider">${faculty} &bull; Mahasiswa</span>
+                        <span>Baru</span>
                     </div>
-                    <h3 class="font-black text-stone-900 text-sm leading-snug mt-2">${title}</h3>
-                    <p class="text-xs text-stone-500 font-medium mt-1">${desc}</p>
+                    <h3 class="font-bold text-stone-900 text-sm leading-snug">${title}</h3>
+                    <p class="text-xs text-stone-500 mt-2 line-clamp-2">${desc}</p>
                 </div>
             </div>
             <div class="p-5 pt-0">
-                <div class="pt-3 border-t-2 border-stone-100 flex items-center justify-between">
+                <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
                     <div>
-                        <span class="text-[9px] font-black text-stone-400 uppercase block">Harga Pas</span>
-                        <p class="text-base font-black text-stone-900">Rp ${price}</p>
+                        <span class="text-[10px] font-bold text-stone-400 uppercase block">Harga Pas</span>
+                        <p class="text-base font-extrabold text-stone-900">Rp ${price}</p>
                     </div>
-                    <button onclick="openModal('${title}', 'Rp ${price}', '${category}', '${faculty}', '${seller}', '2024', '${location}', '${desc}', '${defaultImg}')" class="bg-stone-900 hover:bg-[#D9381E] text-white text-xs font-black px-4 py-2 rounded-xl border border-stone-900 transition cursor-pointer">
+                    <button onclick="openModal('${title}', 'Rp ${price}', '${category}', '${faculty}', '${seller}', '2024', '${location}', '${desc}', '${defaultImg}')" class="bg-stone-900 hover:bg-[#991B1B] text-white text-xs font-bold px-3.5 py-2 rounded-xl transition cursor-pointer">
                         Detail
                     </button>
                 </div>
@@ -112,5 +122,5 @@ function submitProduct(e) {
 
     document.getElementById('product-grid').insertAdjacentHTML('afterbegin', newCardHTML);
     closePostModal();
-    alert('Iklan barang preloved berhasil ditayangkan!');
+    alert('Iklan barang preloved kamu berhasil ditayangkan!');
 }

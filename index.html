@@ -3,124 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RE:CAMPUS — Marketplace Preloved Mahasiswa</title>
+    <title>RE:CAMPUS — Kurasi Preloved Mahasiswa</title>
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased bg-[#F7F4EB] text-stone-900 flex flex-col min-h-screen">
+<body class="antialiased bg-[#F9F8F6] text-stone-900 flex flex-col min-h-screen">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-stone-900 text-stone-200 text-[11px] py-2 px-4 font-bold tracking-wide">
+    <!-- Top Running Text Bar -->
+    <div class="bg-stone-900 text-stone-200 text-xs py-2.5 px-4 font-semibold tracking-wide">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Valid KTM & COD Safe Zones | No Commission on Campus</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Platform Preloved Mahasiswa &bull; Transaksi COD Aman Bebas Biaya Admin</span>
             </div>
-            <div class="hidden sm:flex items-center space-x-4 text-stone-300 uppercase text-[10px] tracking-wider">
-                <span><i class="fa-solid fa-shield-cat text-amber-400 mr-1"></i> Verifikasi Internal</span>
-                <span><i class="fa-solid fa-bolt text-red-400 mr-1"></i> Nego Alus Direct</span>
+            <div class="hidden sm:flex items-center space-x-4 text-stone-400 text-[11px]">
+                <span><i class="fa-solid fa-id-card text-emerald-400 mr-1"></i> Verifikasi KTM</span>
+                <span><i class="fa-solid fa-comments text-amber-400 mr-1"></i> Nego Langsung</span>
             </div>
         </div>
     </div>
 
     <!-- Header Navbar -->
-    <header class="sticky top-0 z-40 bg-[#F7F4EB]/95 backdrop-blur-md border-b-2 border-stone-900">
+    <header class="sticky top-0 z-40 bg-[#F9F8F6]/90 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             
-            <!-- Logo Playful -->
+            <!-- Logo Brand -->
             <a href="#" class="flex items-center space-x-3 shrink-0">
-                <div class="w-12 h-12 rounded-2xl bg-[#D9381E] border-2 border-stone-900 flex items-center justify-center text-white font-black text-xl shadow-[3px_3px_0px_0px_#1c1917]">
+                <div class="w-10 h-10 rounded-xl bg-[#991B1B] flex items-center justify-center text-white shadow-xs font-bold text-base">
                     <i class="fa-solid fa-arrows-rotate"></i>
                 </div>
                 <div>
-                    <span class="text-2xl font-black tracking-tight text-stone-900">RE<span class="text-[#D9381E]">:CAMPUS</span></span>
-                    <span class="block text-[9px] font-extrabold text-stone-500 uppercase tracking-widest">Preloved Marketplace</span>
+                    <span class="text-xl font-extrabold tracking-tight text-stone-900">RE<span class="text-[#991B1B]">:CAMPUS</span></span>
+                    <span class="block text-[9px] font-semibold text-stone-400 uppercase tracking-widest">Preloved Marketplace</span>
                 </div>
             </a>
 
-            <!-- Menu Navigation -->
-            <nav class="hidden md:flex items-center space-x-6 text-xs font-black tracking-wider uppercase">
-                <a href="#beranda" class="text-[#D9381E] hover:text-stone-900 transition-colors">Beranda</a>
-                <a href="#katalog" class="text-stone-700 hover:text-stone-900 transition-colors">Katalog</a>
-                <a href="#katalog" class="text-amber-600 hover:text-stone-900 transition-colors">Fakultas</a>
-                <a href="#katalog" class="text-sky-600 hover:text-stone-900 transition-colors">Nego Alus</a>
-                <a href="#tentang" class="text-stone-700 hover:text-stone-900 transition-colors">Tentang</a>
-            </nav>
+            <!-- Search Bar Navigation -->
+            <div class="hidden md:flex flex-1 max-w-md mx-6">
+                <div class="relative w-full">
+                    <input type="text" id="search-input" onkeyup="searchProducts()" placeholder="Cari buku, perabotan kos, jas almamater..." class="w-full bg-white border border-stone-200 rounded-2xl pl-10 pr-4 py-2.5 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#991B1B] shadow-2xs">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-stone-400 text-xs"></i>
+                </div>
+            </div>
 
-            <!-- CTA Button -->
-            <button onclick="openPostModal()" class="bg-stone-900 hover:bg-[#D9381E] text-white text-xs font-extrabold px-5 py-3 rounded-2xl border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1c1917] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer flex items-center space-x-2">
-                <span>Pasang Iklan</span>
-                <i class="fa-solid fa-plus text-amber-400"></i>
+            <!-- CTA -->
+            <button onclick="openPostModal()" class="bg-stone-900 hover:bg-[#991B1B] text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow-xs transition-colors cursor-pointer flex items-center space-x-2">
+                <i class="fa-solid fa-plus text-amber-400 text-xs"></i>
+                <span>Jual Barang</span>
             </button>
         </div>
     </header>
 
-    <!-- Colorful Hero Banner Section -->
-    <section id="beranda" class="py-8 sm:py-12 border-b-2 border-stone-900 bg-[#FAF7F0]">
+    <!-- Editorial Hero Section -->
+    <section id="beranda" class="py-10 border-b border-stone-200 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                <!-- Main Headline Box -->
-                <div class="lg:col-span-7 bg-white border-2 border-stone-900 rounded-3xl p-8 sm:p-10 shadow-[6px_6px_0px_0px_#1c1917] flex flex-col justify-between relative overflow-hidden">
-                    <div class="max-w-lg z-10">
-                        <div class="inline-flex items-center space-x-2 bg-amber-200 border-2 border-stone-900 px-3 py-1 rounded-full text-xs font-black mb-6">
-                            <i class="fa-solid fa-sparkles text-amber-700"></i>
-                            <span>Sirkulasi Mandiri Mahasiswa Kampus</span>
-                        </div>
-                        <h1 class="text-3xl sm:text-5xl font-black text-stone-900 leading-tight mb-4 tracking-tight">
-                            Ruang temu preloved mahasiswa, <span class="text-[#D9381E]">lebih bijak</span> kelola barang kuliah.
-                        </h1>
-                        <p class="text-xs sm:text-sm text-stone-600 font-bold leading-relaxed mb-6">
-                            Platform sirkulasi terintegrasi untuk mengalirkan kembali buku referensi, instrumen praktikum, dan perabotan kos secara langsung antar sesama mahasiswa.
-                        </p>
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-200 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold mb-6">
+                        <i class="fa-solid fa-leaf text-xs"></i>
+                        <span>Sirkulasi Mandiri & Daur Ulang Barang Kuliah</span>
                     </div>
 
-                    <!-- Search Input inside Hero -->
-                    <div class="relative z-10">
-                        <div class="flex items-center bg-stone-50 border-2 border-stone-900 rounded-2xl p-1.5 shadow-[3px_3px_0px_0px_#1c1917]">
-                            <i class="fa-solid fa-magnifying-glass text-stone-400 ml-3 text-sm"></i>
-                            <input type="text" id="search-input" onkeyup="searchProducts()" placeholder="Buku, alat praktikum, jas almamater..." class="w-full bg-transparent border-none px-3 py-2 text-xs font-bold text-stone-900 focus:outline-none placeholder-stone-400">
-                            <button onclick="searchProducts()" class="bg-[#D9381E] text-white text-xs font-extrabold px-4 py-2.5 rounded-xl border-2 border-stone-900 cursor-pointer hover:bg-stone-900 transition">
-                                Cari
-                            </button>
-                        </div>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 tracking-tight leading-tight mb-4">
+                        Ruang temu preloved mahasiswa, <span class="text-[#991B1B] underline decoration-amber-300">lebih bijak</span> kelola barang.
+                    </h1>
+
+                    <p class="text-sm sm:text-base text-stone-600 font-medium mb-8 leading-relaxed">
+                        Platform sirkulasi terintegrasi untuk mengalirkan kembali buku referensi, instrumen praktikum, dan perabotan kos secara langsung antar sesama mahasiswa.
+                    </p>
+
+                    <!-- Feature Badges -->
+                    <div class="flex flex-wrap gap-3 text-xs font-bold">
+                        <span class="bg-amber-50 text-amber-900 border border-amber-200/80 px-3.5 py-2 rounded-xl">
+                            <i class="fa-solid fa-book-bookmark text-amber-600 mr-1.5"></i> Modul & Buku Kuliah
+                        </span>
+                        <span class="bg-emerald-50 text-emerald-900 border border-emerald-200/80 px-3.5 py-2 rounded-xl">
+                            <i class="fa-solid fa-couch text-emerald-600 mr-1.5"></i> Perabotan Pindahan Kos
+                        </span>
+                        <span class="bg-sky-50 text-sky-900 border border-sky-200/80 px-3.5 py-2 rounded-xl">
+                            <i class="fa-solid fa-plug text-sky-600 mr-1.5"></i> Elektronik Lulusan
+                        </span>
                     </div>
                 </div>
 
-                <!-- Abstract Art Card spotlight -->
-                <div class="lg:col-span-5 bg-[#0D8A74] border-2 border-stone-900 rounded-3xl p-8 shadow-[6px_6px_0px_0px_#1c1917] text-white flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute -right-10 -top-10 w-48 h-48 bg-amber-400 rounded-full border-2 border-stone-900 opacity-90"></div>
-                    <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-[#D9381E] rounded-full border-2 border-stone-900 opacity-90"></div>
-                    
-                    <div class="relative z-10">
-                        <div class="flex items-center justify-between mb-6">
-                            <span class="bg-stone-900 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-xl border border-stone-700">
-                                <i class="fa-solid fa-certificate text-amber-400 mr-1"></i> Verified KTM
+                <!-- Featured Hero Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-[#F4F3EE] p-6 rounded-3xl border border-stone-200 relative">
+                        <div class="flex items-center justify-between pb-4 border-b border-stone-200 mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-9 h-9 rounded-full bg-stone-900 text-white font-bold text-xs flex items-center justify-center">
+                                    RD
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-stone-900">Rian Darmawan</h4>
+                                    <span class="text-[10px] text-stone-500 font-medium">FT &bull; Teknik Informatika '23</span>
+                                </div>
+                            </div>
+                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full">
+                                <i class="fa-solid fa-check mr-1"></i> Terverifikasi
                             </span>
-                            <span class="text-xs font-black text-amber-300">Fast Response</span>
                         </div>
-                        <h3 class="text-2xl font-black leading-snug mb-2">Pasar Barang Bekas Rasa Teman Sendiri</h3>
-                        <p class="text-xs font-bold text-emerald-100 leading-relaxed">
-                            Aman dari penipuan karena penjual & pembeli terverifikasi Kartu Tanda Mahasiswa (KTM) aktif.
-                        </p>
-                    </div>
 
-                    <div class="relative z-10 pt-6 mt-6 border-t-2 border-emerald-800/80 flex items-center justify-between">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-full bg-amber-400 border-2 border-stone-900 flex items-center justify-center text-stone-900 font-black text-xs">
-                                RD
-                            </div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 border border-stone-200 bg-white relative">
+                            <span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur-xs text-white text-[9px] font-bold px-2.5 py-1 rounded-md uppercase">Sorotan Pekan Ini</span>
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Buku Kalkulus" class="w-full h-full object-cover">
+                        </div>
+
+                        <div class="flex items-center justify-between">
                             <div>
-                                <span class="block text-xs font-black">Rian Darmawan</span>
-                                <span class="text-[10px] text-emerald-200 font-bold">FT &bull; Teknik Informatika '23</span>
+                                <h3 class="font-bold text-stone-900 text-sm">Kalkulus Purcell Edisi 9</h3>
+                                <p class="text-base font-extrabold text-[#991B1B] mt-0.5">Rp 65.000</p>
                             </div>
+                            <button onclick="openModal('Kalkulus Purcell Edisi 9', 'Rp 65.000', 'Buku Akademik', 'FT - T. Informatika', 'Rian Darmawan', '2023', 'Gedung Lab Komputer FT', 'Coretan pensil tipis di bab awal saja, sisanya mulus.', 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#991B1B] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition cursor-pointer">
+                                Lihat Detail
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -129,30 +133,30 @@
         </div>
     </section>
 
-    <!-- Interactive Category Filter Tabs -->
+    <!-- Colorful Filter Control Bar -->
     <section id="katalog" class="pt-10 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             
-            <!-- Category Badges -->
+            <!-- Category Tabs with Distinct Functional Colors -->
             <div class="flex items-center space-x-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-                <button onclick="filterCategory('all')" id="tab-all" class="filter-tab bg-stone-900 text-white font-extrabold text-xs px-5 py-3 rounded-2xl border-2 border-stone-900 shadow-[2px_2px_0px_0px_#1c1917] cursor-pointer transition">
-                    <i class="fa-solid fa-grid-2 mr-1"></i> Semua Barang
+                <button onclick="filterCategory('all')" id="tab-all" class="filter-tab bg-stone-900 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-2xs transition cursor-pointer">
+                    Semua Barang
                 </button>
-                <button onclick="filterCategory('buku')" id="tab-buku" class="filter-tab bg-[#2A7BDE] text-white font-extrabold text-xs px-5 py-3 rounded-2xl border-2 border-stone-900 shadow-[2px_2px_0px_0px_#1c1917] cursor-pointer transition">
-                    <i class="fa-solid fa-book mr-1"></i> Buku & Modul
+                <button onclick="filterCategory('buku')" id="tab-buku" class="filter-tab bg-amber-100 text-amber-900 hover:bg-amber-200 border border-amber-200/80 font-bold text-xs px-4 py-2.5 rounded-xl transition cursor-pointer">
+                    Buku & Modul
                 </button>
-                <button onclick="filterCategory('kos')" id="tab-kos" class="filter-tab bg-[#0D8A74] text-white font-extrabold text-xs px-5 py-3 rounded-2xl border-2 border-stone-900 shadow-[2px_2px_0px_0px_#1c1917] cursor-pointer transition">
-                    <i class="fa-solid fa-couch mr-1"></i> Perabotan Kos
+                <button onclick="filterCategory('kos')" id="tab-kos" class="filter-tab bg-emerald-100 text-emerald-900 hover:bg-emerald-200 border border-emerald-200/80 font-bold text-xs px-4 py-2.5 rounded-xl transition cursor-pointer">
+                    Perabotan Kos
                 </button>
-                <button onclick="filterCategory('elektronik')" id="tab-elektronik" class="filter-tab bg-amber-400 text-stone-900 font-extrabold text-xs px-5 py-3 rounded-2xl border-2 border-stone-900 shadow-[2px_2px_0px_0px_#1c1917] cursor-pointer transition">
-                    <i class="fa-solid fa-laptop mr-1"></i> Elektronik & Gadget
+                <button onclick="filterCategory('elektronik')" id="tab-elektronik" class="filter-tab bg-sky-100 text-sky-900 hover:bg-sky-200 border border-sky-200/80 font-bold text-xs px-4 py-2.5 rounded-xl transition cursor-pointer">
+                    Elektronik & Gadget
                 </button>
             </div>
 
-            <!-- Faculty Filter -->
+            <!-- Faculty Filter Dropdown -->
             <div class="flex items-center space-x-2 shrink-0">
-                <span class="text-xs font-black text-stone-600">Fakultas:</span>
-                <select id="faculty-select" onchange="filterFaculty()" class="bg-white border-2 border-stone-900 rounded-xl px-3 py-2 text-xs font-extrabold text-stone-900 shadow-[2px_2px_0px_0px_#1c1917] focus:outline-none">
+                <span class="text-xs font-bold text-stone-500">Fakultas:</span>
+                <select id="faculty-select" onchange="filterFaculty()" class="bg-white border border-stone-200 rounded-xl px-3 py-2 text-xs font-bold text-stone-800 shadow-2xs focus:outline-none focus:border-[#991B1B]">
                     <option value="all">Semua Fakultas</option>
                     <option value="FT">Teknik (FT)</option>
                     <option value="FEB">FEB</option>
@@ -168,165 +172,120 @@
     <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1">
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <!-- Card 1: Buku Kalkulus (Blue Sticker) -->
-            <div class="product-card bg-white rounded-3xl border-2 border-stone-900 overflow-hidden shadow-[4px_4px_0px_0px_#1c1917] flex flex-col justify-between" data-category="buku" data-faculty="FT" data-title="Kalkulus Purcell">
+            <!-- Item 1: Buku Akademik (Warm Amber Accent) -->
+            <div class="product-card bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-2xs flex flex-col justify-between" data-category="buku" data-faculty="FT" data-title="Kalkulus Purcell">
                 <div>
-                    <div class="relative h-56 bg-sky-50 border-b-2 border-stone-900 p-4 flex items-center justify-center overflow-hidden">
-                        <!-- Playful Wavy Sticker Badge -->
-                        <div class="sticker-badge bg-[#2A7BDE] text-white">
-                            <span class="text-[9px] font-black uppercase">Like New</span>
-                        </div>
-                        
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Buku Kalkulus" class="w-full h-full object-cover rounded-xl border border-stone-900">
+                    <div class="relative h-52 bg-stone-100 overflow-hidden border-b border-stone-100">
+                        <span class="absolute top-3 left-3 bg-amber-500 text-white text-[9px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Buku Akademik</span>
+                        <span class="absolute top-3 right-3 bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-2 py-1 rounded-md">Kondisi 95%</span>
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Buku Kalkulus" class="w-full h-full object-cover">
                     </div>
                     <div class="p-5">
-                        <div class="flex items-center justify-between text-[10px] font-extrabold mb-1">
-                            <span class="bg-sky-100 text-[#2A7BDE] px-2 py-0.5 rounded-md border border-sky-300">FT &bull; T. Informatika</span>
-                            <span class="text-stone-400">Angkatan '23</span>
+                        <div class="flex items-center justify-between text-[11px] font-bold text-stone-500 mb-1">
+                            <span class="text-[#991B1B] uppercase tracking-wider">FT &bull; T. Informatika</span>
+                            <span>Angkatan '23</span>
                         </div>
-                        <h3 class="font-black text-stone-900 text-sm leading-snug mt-2">Kalkulus Purcell - Purcell & Varberg</h3>
-                        <p class="text-xs text-stone-500 font-medium mt-1">Coretan pensil tipis di bab awal saja, halaman utuh.</p>
+                        <h3 class="font-bold text-stone-900 text-sm leading-snug">Kalkulus Purcell Edisi 9 - Varberg</h3>
+                        <p class="text-xs text-stone-500 mt-2 line-clamp-2">Coretan pensil tipis di bab awal saja, halaman utuh tanpa lipatan.</p>
                     </div>
                 </div>
                 <div class="p-5 pt-0">
-                    <div class="pt-3 border-t-2 border-stone-100 flex items-center justify-between">
+                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
                         <div>
-                            <span class="text-[9px] font-black text-stone-400 uppercase block">Harga Pas</span>
-                            <p class="text-base font-black text-stone-900">Rp 70.000</p>
+                            <span class="text-[10px] font-bold text-stone-400 uppercase block">Harga Pas</span>
+                            <p class="text-base font-extrabold text-stone-900">Rp 65.000</p>
                         </div>
-                        <button onclick="openModal('Kalkulus Purcell - Purcell & Varberg', 'Rp 70.000', 'Buku Akademik', 'FT - T. Informatika', 'Rian Darmawan', '2023', 'Gedung Lab Komputer FT', 'Coretan pensil tipis di bab awal saja, sisanya bersih seperti baru.', 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#D9381E] text-white text-xs font-black px-4 py-2 rounded-xl border border-stone-900 transition cursor-pointer">
+                        <button onclick="openModal('Kalkulus Purcell Edisi 9', 'Rp 65.000', 'Buku Akademik', 'FT - T. Informatika', 'Rian Darmawan', '2023', 'Gedung Lab Komputer FT', 'Coretan pensil tipis di bab awal saja, sisanya mulus.', 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#991B1B] text-white text-xs font-bold px-3.5 py-2 rounded-xl transition cursor-pointer">
                             Detail
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 2: Kipas Kos (Green Sticker) -->
-            <div class="product-card bg-white rounded-3xl border-2 border-stone-900 overflow-hidden shadow-[4px_4px_0px_0px_#1c1917] flex flex-col justify-between" data-category="kos" data-faculty="FISIP" data-title="Kipas Angin Kos Maspion">
+            <!-- Item 2: Perabotan Kos (Sage Emerald Accent) -->
+            <div class="product-card bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-2xs flex flex-col justify-between" data-category="kos" data-faculty="FISIP" data-title="Kipas Angin Kos">
                 <div>
-                    <div class="relative h-56 bg-emerald-50 border-b-2 border-stone-900 p-4 flex items-center justify-center overflow-hidden">
-                        <!-- Playful Wavy Sticker Badge -->
-                        <div class="sticker-badge bg-[#0D8A74] text-white">
-                            <span class="text-[9px] font-black uppercase">Nego Alus</span>
-                        </div>
-                        
-                        <img src="https://images.unsplash.com/photo-1618961734760-466979ce35b0?auto=format&fit=crop&w=600&q=80" alt="Kipas Kos" class="w-full h-full object-cover rounded-xl border border-stone-900">
+                    <div class="relative h-52 bg-stone-100 overflow-hidden border-b border-stone-100">
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[9px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Perabotan Kos</span>
+                        <span class="absolute top-3 right-3 bg-amber-100 text-amber-800 text-[9px] font-extrabold px-2 py-1 rounded-md">Nego Alus</span>
+                        <img src="https://images.unsplash.com/photo-1618961734760-466979ce35b0?auto=format&fit=crop&w=600&q=80" alt="Kipas Kos" class="w-full h-full object-cover">
                     </div>
                     <div class="p-5">
-                        <div class="flex items-center justify-between text-[10px] font-extrabold mb-1">
-                            <span class="bg-emerald-100 text-[#0D8A74] px-2 py-0.5 rounded-md border border-emerald-300">FISIP &bull; Komunikasi</span>
-                            <span class="text-stone-400">Angkatan '22</span>
+                        <div class="flex items-center justify-between text-[11px] font-bold text-stone-500 mb-1">
+                            <span class="text-[#991B1B] uppercase tracking-wider">FISIP &bull; Komunikasi</span>
+                            <span>Angkatan '22</span>
                         </div>
-                        <h3 class="font-black text-stone-900 text-sm leading-snug mt-2">Kipas Angin Kos - Maspion 12"</h3>
-                        <p class="text-xs text-stone-500 font-medium mt-1">Angin kencang, pemakaian 1 tahun. Bebas debu.</p>
+                        <h3 class="font-bold text-stone-900 text-sm leading-snug">Kipas Angin Meja Krisbow 12 Inch</h3>
+                        <p class="text-xs text-stone-500 mt-2 line-clamp-2">Angin kencang, pemakaian 1 tahun. Dijual karena mau wisuda & pindahan.</p>
                     </div>
                 </div>
                 <div class="p-5 pt-0">
-                    <div class="pt-3 border-t-2 border-stone-100 flex items-center justify-between">
+                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
                         <div>
-                            <span class="text-[9px] font-black text-stone-400 uppercase block">Harga Penawaran</span>
-                            <p class="text-base font-black text-stone-900">Rp 85.000</p>
+                            <span class="text-[10px] font-bold text-stone-400 uppercase block">Harga Penawaran</span>
+                            <p class="text-base font-extrabold text-stone-900">Rp 85.000</p>
                         </div>
-                        <button onclick="openModal('Kipas Angin Kos - Maspion 12&quot;', 'Rp 85.000', 'Perabotan Kos', 'FISIP - Ilkom', 'Siti Rahma', '2022', 'Kantin FISIP / Kukusan', 'Angin kencang, tombol aman. Dijual karena mau lulus.', 'https://images.unsplash.com/photo-1618961734760-466979ce35b0?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#D9381E] text-white text-xs font-black px-4 py-2 rounded-xl border border-stone-900 transition cursor-pointer">
+                        <button onclick="openModal('Kipas Angin Meja Krisbow 12 Inch', 'Rp 85.000', 'Perabotan Kos', 'FISIP - Ilkom', 'Siti Rahma', '2022', 'Kantin FISIP / Area Kukusan', 'Angin kencang, tombol aman. Dijual karena mau lulus.', 'https://images.unsplash.com/photo-1618961734760-466979ce35b0?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#991B1B] text-white text-xs font-bold px-3.5 py-2 rounded-xl transition cursor-pointer">
                             Detail
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 3: Kalkulator Casio (Yellow Sticker) -->
-            <div class="product-card bg-white rounded-3xl border-2 border-stone-900 overflow-hidden shadow-[4px_4px_0px_0px_#1c1917] flex flex-col justify-between" data-category="elektronik" data-faculty="FT" data-title="Kalkulator Casio Classwiz">
+            <!-- Item 3: Elektronik (Sky Blue Accent) -->
+            <div class="product-card bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-2xs flex flex-col justify-between" data-category="elektronik" data-faculty="FEB" data-title="Kalkulator Casio">
                 <div>
-                    <div class="relative h-56 bg-amber-50 border-b-2 border-stone-900 p-4 flex items-center justify-center overflow-hidden">
-                        <!-- Playful Wavy Sticker Badge -->
-                        <div class="sticker-badge bg-amber-400 text-stone-900">
-                            <span class="text-[9px] font-black uppercase">Kondisi 98%</span>
-                        </div>
-                        
-                        <img src="https://images.unsplash.com/photo-1594980596870-8aa52a78d8cd?auto=format&fit=crop&w=600&q=80" alt="Kalkulator Casio" class="w-full h-full object-cover rounded-xl border border-stone-900">
+                    <div class="relative h-52 bg-stone-100 overflow-hidden border-b border-stone-100">
+                        <span class="absolute top-3 left-3 bg-sky-600 text-white text-[9px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Elektronik</span>
+                        <span class="absolute top-3 right-3 bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-2 py-1 rounded-md">Mulus 98%</span>
+                        <img src="https://images.unsplash.com/photo-1594980596870-8aa52a78d8cd?auto=format&fit=crop&w=600&q=80" alt="Kalkulator Casio" class="w-full h-full object-cover">
                     </div>
                     <div class="p-5">
-                        <div class="flex items-center justify-between text-[10px] font-extrabold mb-1">
-                            <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-md border border-amber-300">FT &bull; Elektro</span>
-                            <span class="text-stone-400">Angkatan '23</span>
+                        <div class="flex items-center justify-between text-[11px] font-bold text-stone-500 mb-1">
+                            <span class="text-[#991B1B] uppercase tracking-wider">FEB &bull; Akuntansi</span>
+                            <span>Angkatan '24</span>
                         </div>
-                        <h3 class="font-black text-stone-900 text-sm leading-snug mt-2">Kalkulator Casio Classwiz fx-991EX</h3>
-                        <p class="text-xs text-stone-500 font-medium mt-1">Lengkap dus original & tutup pelindung.</p>
+                        <h3 class="font-bold text-stone-900 text-sm leading-snug">Kalkulator Saintifik Casio Classwiz</h3>
+                        <p class="text-xs text-stone-500 mt-2 line-clamp-2">Lengkap dus original & pelindung. Baterai dan solar panel aktif normal.</p>
                     </div>
                 </div>
                 <div class="p-5 pt-0">
-                    <div class="pt-3 border-t-2 border-stone-100 flex items-center justify-between">
+                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
                         <div>
-                            <span class="text-[9px] font-black text-stone-400 uppercase block">Harga Pas</span>
-                            <p class="text-base font-black text-stone-900">Rp 180.000</p>
+                            <span class="text-[10px] font-bold text-stone-400 uppercase block">Harga Pas</span>
+                            <p class="text-base font-extrabold text-stone-900">Rp 180.000</p>
                         </div>
-                        <button onclick="openModal('Kalkulator Casio Classwiz fx-991EX', 'Rp 180.000', 'Elektronik', 'FT - T. Elektro', 'Bagus Pratama', '2023', 'Lobi FT / Perpustakaan Pusat', 'Fungsi normal 100%, baterai dan solar panel aktif.', 'https://images.unsplash.com/photo-1594980596870-8aa52a78d8cd?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#D9381E] text-white text-xs font-black px-4 py-2 rounded-xl border border-stone-900 transition cursor-pointer">
+                        <button onclick="openModal('Kalkulator Saintifik Casio Classwiz', 'Rp 180.000', 'Elektronik', 'FEB - Akuntansi', 'Bagus Pratama', '2024', 'Lobi FEB Gedung B', 'Fungsi normal 100%, dus original lengkap.', 'https://images.unsplash.com/photo-1594980596870-8aa52a78d8cd?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#991B1B] text-white text-xs font-bold px-3.5 py-2 rounded-xl transition cursor-pointer">
                             Detail
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 4: Lampu Belajar (Blue Sticker) -->
-            <div class="product-card bg-white rounded-3xl border-2 border-stone-900 overflow-hidden shadow-[4px_4px_0px_0px_#1c1917] flex flex-col justify-between" data-category="elektronik" data-faculty="FK" data-title="Lampu Belajar LED">
+            <!-- Item 4: Lampu Belajar LED -->
+            <div class="product-card bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-2xs flex flex-col justify-between" data-category="elektronik" data-faculty="FK" data-title="Lampu Belajar LED">
                 <div>
-                    <div class="relative h-56 bg-sky-50 border-b-2 border-stone-900 p-4 flex items-center justify-center overflow-hidden">
-                        <!-- Playful Wavy Sticker Badge -->
-                        <div class="sticker-badge bg-sky-400 text-stone-900">
-                            <span class="text-[9px] font-black uppercase">Baru Upload</span>
-                        </div>
-                        
-                        <img src="https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=600&q=80" alt="Lampu Belajar" class="w-full h-full object-cover rounded-xl border border-stone-900">
+                    <div class="relative h-52 bg-stone-100 overflow-hidden border-b border-stone-100">
+                        <span class="absolute top-3 left-3 bg-sky-600 text-white text-[9px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Elektronik Kos</span>
+                        <span class="absolute top-3 right-3 bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-2 py-1 rounded-md">Like New</span>
+                        <img src="https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=600&q=80" alt="Lampu Belajar" class="w-full h-full object-cover">
                     </div>
                     <div class="p-5">
-                        <div class="flex items-center justify-between text-[10px] font-extrabold mb-1">
-                            <span class="bg-red-100 text-[#D9381E] px-2 py-0.5 rounded-md border border-red-200">FK &bull; Kedokteran</span>
-                            <span class="text-stone-400">Angkatan '24</span>
+                        <div class="flex items-center justify-between text-[11px] font-bold text-stone-500 mb-1">
+                            <span class="text-[#991B1B] uppercase tracking-wider">FK &bull; Kedokteran</span>
+                            <span>Angkatan '23</span>
                         </div>
-                        <h3 class="font-black text-stone-900 text-sm leading-snug mt-2">Lampu Belajar LED - Warm White</h3>
-                        <p class="text-xs text-stone-500 font-medium mt-1">Bisa di-charge USB, 3 tingkat cahaya.</p>
+                        <h3 class="font-bold text-stone-900 text-sm leading-snug">Lampu Meja Belajar LED Warm White</h3>
+                        <p class="text-xs text-stone-500 mt-2 line-clamp-2">Bisa di-charge USB, 3 tingkat kecerahan. Pemakaian baru 2 bulan.</p>
                     </div>
                 </div>
                 <div class="p-5 pt-0">
-                    <div class="pt-3 border-t-2 border-stone-100 flex items-center justify-between">
+                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
                         <div>
-                            <span class="text-[9px] font-black text-stone-400 uppercase block">Harga Pas</span>
-                            <p class="text-base font-black text-stone-900">Rp 40.000</p>
+                            <span class="text-[10px] font-bold text-stone-400 uppercase block">Harga Pas</span>
+                            <p class="text-base font-extrabold text-stone-900">Rp 40.000</p>
                         </div>
-                        <button onclick="openModal('Lampu Belajar LED - Warm White', 'Rp 40.000', 'Elektronik Kos', 'FK - Kedokteran', 'Nadia Putri', '2024', 'Gazebo FK / Perpus Pusat', 'Kabel USB lengkap, fisik mulus tanpa goresan.', 'https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#D9381E] text-white text-xs font-black px-4 py-2 rounded-xl border border-stone-900 transition cursor-pointer">
-                            Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5: Modul Sosiologi (Orange Sticker) -->
-            <div class="product-card bg-white rounded-3xl border-2 border-stone-900 overflow-hidden shadow-[4px_4px_0px_0px_#1c1917] flex flex-col justify-between" data-category="buku" data-faculty="FISIP" data-title="Modul Sosiologi Sem 2">
-                <div>
-                    <div class="relative h-56 bg-orange-50 border-b-2 border-stone-900 p-4 flex items-center justify-center overflow-hidden">
-                        <!-- Playful Wavy Sticker Badge -->
-                        <div class="sticker-badge bg-[#D9381E] text-white">
-                            <span class="text-[9px] font-black uppercase">Coretn Tipis</span>
-                        </div>
-                        
-                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" alt="Modul Sosiologi" class="w-full h-full object-cover rounded-xl border border-stone-900">
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-center justify-between text-[10px] font-extrabold mb-1">
-                            <span class="bg-orange-100 text-orange-800 px-2 py-0.5 rounded-md border border-orange-300">FISIP &bull; Sosiologi</span>
-                            <span class="text-stone-400">Angkatan '23</span>
-                        </div>
-                        <h3 class="font-black text-stone-900 text-sm leading-snug mt-2">Modul Sosiologi Sem 2 + Catatan Ujian</h3>
-                        <p class="text-xs text-stone-500 font-medium mt-1">Bonus rangkuman kisi-kisi UAS dari dosen.</p>
-                    </div>
-                </div>
-                <div class="p-5 pt-0">
-                    <div class="pt-3 border-t-2 border-stone-100 flex items-center justify-between">
-                        <div>
-                            <span class="text-[9px] font-black text-stone-400 uppercase block">Harga Pas</span>
-                            <p class="text-base font-black text-stone-900">Rp 55.000</p>
-                        </div>
-                        <button onclick="openModal('Modul Sosiologi Sem 2 + Catatan', 'Rp 55.000', 'Buku Akademik', 'FISIP - Sosiologi', 'Adel Janitra', '2023', 'Gedung FISIP B', 'Ada coretan stabilo kuning di poin-poin penting UTS.', 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#D9381E] text-white text-xs font-black px-4 py-2 rounded-xl border border-stone-900 transition cursor-pointer">
+                        <button onclick="openModal('Lampu Meja Belajar LED Warm White', 'Rp 40.000', 'Elektronik Kos', 'FK - Kedokteran', 'Nadia Putri', '2023', 'Perpustakaan Pusat / Gazebo FK', 'Kabel USB lengkap, mulus tanpa goresan.', 'https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=600&q=80')" class="bg-stone-900 hover:bg-[#991B1B] text-white text-xs font-bold px-3.5 py-2 rounded-xl transition cursor-pointer">
                             Detail
                         </button>
                     </div>
@@ -337,107 +296,112 @@
     </section>
 
     <!-- Footer Developer Team -->
-    <footer id="tentang" class="bg-stone-900 text-white py-12 border-t-2 border-stone-900 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer id="tentang" class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-2xl bg-[#D9381E] border-2 border-white flex items-center justify-center font-black text-white text-base">
-                    <i class="fa-solid fa-arrows-rotate"></i>
+            <div>
+                <div class="flex items-center justify-center md:justify-start space-x-3 mb-2">
+                    <div class="w-8 h-8 rounded-lg bg-[#991B1B] flex items-center justify-center text-white font-bold text-xs">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <span class="text-base font-bold text-white tracking-tight">RE:CAMPUS</span>
                 </div>
-                <div>
-                    <span class="text-lg font-black tracking-tight">RE:CAMPUS</span>
-                    <span class="block text-[10px] text-stone-400 font-bold uppercase">Preloved Marketplace Mahasiswa</span>
-                </div>
+                <p class="text-xs text-stone-400">Platform Tata Kelola Barang Preloved Mahasiswa</p>
             </div>
 
-            <!-- Developer Credits -->
-            <div class="bg-stone-800 border-2 border-stone-700 px-6 py-3 rounded-2xl text-center md:text-left">
-                <span class="inline-flex items-center text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1">
-                    <i class="fa-solid fa-code mr-1"></i> Tim Pengembang (Developers)
-                </span>
-                <p class="text-xs font-extrabold text-stone-200">
+            <!-- Official Developer Credits -->
+            <div class="bg-stone-800/80 border border-stone-700/80 px-6 py-3.5 rounded-2xl">
+                <span class="block text-[9px] uppercase font-bold text-amber-400 tracking-widest mb-1">Tim Pengembang (Developers)</span>
+                <p class="text-xs font-bold text-white tracking-wide">
                     Hadisty Qurratuain &bull; Fadhiyah Syafiqah Ramadhani &bull; Adel Janitra Basitul Latif
                 </p>
             </div>
 
-            <div class="flex space-x-3 text-stone-400">
-                <a href="#" class="w-9 h-9 rounded-xl bg-stone-800 border border-stone-700 flex items-center justify-center hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="w-9 h-9 rounded-xl bg-stone-800 border border-stone-700 flex items-center justify-center hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+            <div class="flex space-x-4 text-stone-400 text-sm">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
             </div>
 
         </div>
     </footer>
 
-    <!-- Modal Detail Produk -->
-    <div id="product-modal" class="fixed inset-0 bg-stone-950/70 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 border-2 border-stone-900 shadow-[8px_8px_0px_0px_#1c1917]">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b-2 border-stone-900">
-                <span id="modal-badge" class="bg-amber-200 text-stone-900 border border-stone-900 text-[10px] font-black px-3 py-1 rounded-full uppercase">Kategori</span>
-                <button onclick="closeModal()" class="text-stone-900 font-black text-2xl hover:text-[#D9381E] cursor-pointer">&times;</button>
+    <!-- Modal Pop-up Detail Produk -->
+    <div id="product-modal" class="fixed inset-0 bg-stone-950/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-xl border border-stone-200">
+            <div class="flex justify-between items-center mb-4 pb-3 border-b border-stone-100">
+                <span id="modal-badge" class="bg-stone-100 text-stone-800 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Kategori</span>
+                <button onclick="closeModal()" class="text-stone-400 hover:text-stone-900 font-bold text-lg cursor-pointer">&times;</button>
             </div>
 
-            <div class="h-48 rounded-2xl overflow-hidden bg-stone-100 border-2 border-stone-900 mb-4">
-                <img id="modal-img" src="" alt="Detail" class="w-full h-full object-cover">
+            <div class="h-48 rounded-2xl overflow-hidden bg-stone-100 mb-4 border border-stone-100">
+                <img id="modal-img" src="" alt="Foto Produk" class="w-full h-full object-cover">
             </div>
 
-            <h3 id="modal-title" class="text-lg font-black text-stone-900 leading-snug mb-1">Nama Barang</h3>
-            <p id="modal-price" class="text-2xl font-black text-[#D9381E] mb-4">Rp 0</p>
+            <h3 id="modal-title" class="text-lg font-bold text-stone-900 mb-1">Nama Barang</h3>
+            <p id="modal-price" class="text-xl font-bold text-[#991B1B] mb-4">Rp 0</p>
 
-            <div class="bg-[#FAF7F0] p-4 rounded-2xl border-2 border-stone-900 text-xs space-y-2 mb-6 font-bold text-stone-700">
-                <div class="flex justify-between border-b border-stone-200 pb-2">
-                    <span class="text-stone-400 uppercase text-[10px]">Penjual:</span>
-                    <span id="modal-seller" class="text-stone-900">Nama</span>
+            <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200/80 mb-4 flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-bold text-stone-400 uppercase block">Penjual Terverifikasi</span>
+                    <h4 id="modal-seller" class="text-xs font-bold text-stone-900 mt-0.5">Nama Penjual</h4>
+                    <span id="modal-faculty" class="text-[11px] text-stone-500 font-medium">Fakultas &bull; Angkatan</span>
                 </div>
-                <div class="flex justify-between border-b border-stone-200 pb-2">
-                    <span class="text-stone-400 uppercase text-[10px]">Fakultas:</span>
-                    <span id="modal-faculty" class="text-stone-900">Fakultas</span>
+                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full"><i class="fa-solid fa-check mr-1"></i> Terverifikasi</span>
+            </div>
+
+            <div class="space-y-2.5 text-xs text-stone-600 mb-6">
+                <div class="flex items-start space-x-2">
+                    <i class="fa-solid fa-location-dot text-[#991B1B] mt-0.5"></i>
+                    <div>
+                        <strong class="text-stone-900">Titik COD Kampus:</strong>
+                        <span id="modal-loc" class="block text-stone-600">Area Kampus</span>
+                    </div>
                 </div>
-                <div class="flex justify-between border-b border-stone-200 pb-2">
-                    <span class="text-stone-400 uppercase text-[10px]">Titik COD:</span>
-                    <span id="modal-loc" class="text-stone-900">Lokasi</span>
-                </div>
-                <div class="pt-1">
-                    <span class="text-stone-400 uppercase text-[10px] block mb-1">Catatan/Minus:</span>
-                    <p id="modal-desc" class="text-stone-900 text-[11px] font-medium leading-relaxed">Deskripsi...</p>
+                <div class="flex items-start space-x-2">
+                    <i class="fa-solid fa-circle-info text-amber-600 mt-0.5"></i>
+                    <div>
+                        <strong class="text-stone-900">Catatan/Minus:</strong>
+                        <span id="modal-desc" class="block text-stone-600">Deskripsi...</span>
+                    </div>
                 </div>
             </div>
 
             <div class="flex space-x-3">
-                <button onclick="closeModal()" class="flex-1 bg-stone-200 text-stone-900 font-extrabold py-3 rounded-2xl border-2 border-stone-900 text-xs uppercase cursor-pointer">Tutup</button>
-                <button onclick="alert('Menghubungkan ke WhatsApp penjual...')" class="flex-1 bg-[#0D8A74] hover:bg-emerald-700 text-white font-extrabold py-3 rounded-2xl border-2 border-stone-900 text-xs uppercase cursor-pointer flex items-center justify-center space-x-2">
-                    <i class="fa-brands fa-whatsapp text-base"></i>
-                    <span>Chat WA</span>
+                <button onclick="closeModal()" class="flex-1 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold py-3 rounded-xl transition text-xs uppercase cursor-pointer">Batal</button>
+                <button onclick="alert('Membuka WhatsApp penjual terverifikasi...')" class="flex-1 bg-[#991B1B] hover:bg-stone-900 text-white font-bold py-3 rounded-xl transition text-xs uppercase cursor-pointer flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Chat Penjual</span>
                 </button>
             </div>
         </div>
     </div>
 
     <!-- Modal Form Pasang Iklan -->
-    <div id="post-modal" class="fixed inset-0 bg-stone-950/70 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 border-2 border-stone-900 shadow-[8px_8px_0px_0px_#1c1917]">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b-2 border-stone-900">
-                <h3 class="text-sm font-black text-stone-900 uppercase">Pasang Iklan Preloved Baru</h3>
-                <button onclick="closePostModal()" class="text-stone-900 font-black text-2xl hover:text-[#D9381E] cursor-pointer">&times;</button>
+    <div id="post-modal" class="fixed inset-0 bg-stone-950/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-xl border border-stone-200">
+            <div class="flex justify-between items-center mb-4 pb-3 border-b border-stone-100">
+                <h3 class="text-sm font-bold text-stone-900 uppercase">Pasang Iklan Preloved Baru</h3>
+                <button onclick="closePostModal()" class="text-stone-400 hover:text-stone-900 font-bold text-lg cursor-pointer">&times;</button>
             </div>
 
             <form onsubmit="submitProduct(event)" class="space-y-3">
                 <div>
-                    <label class="block text-[10px] font-black uppercase text-stone-600 mb-1">Nama Barang</label>
-                    <input type="text" id="input-title" required placeholder="Contoh: Modul Fisika Dasar" class="w-full bg-stone-50 border-2 border-stone-900 rounded-xl px-3 py-2 text-xs font-bold text-stone-900 focus:outline-none">
+                    <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Nama Barang</label>
+                    <input type="text" id="input-title" required placeholder="Contoh: Modul Fisika Dasar 2024" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-xs text-stone-900 focus:outline-none focus:border-[#991B1B]">
                 </div>
 
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-[10px] font-black uppercase text-stone-600 mb-1">Kategori</label>
-                        <select id="input-category" class="w-full bg-stone-50 border-2 border-stone-900 rounded-xl px-2 py-2 text-xs font-bold text-stone-900 focus:outline-none">
+                        <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Kategori</label>
+                        <select id="input-category" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-2 py-2 text-xs text-stone-900 focus:outline-none focus:border-[#991B1B]">
                             <option value="buku">Buku & Modul</option>
                             <option value="kos">Perabotan Kos</option>
                             <option value="elektronik">Elektronik</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[10px] font-black uppercase text-stone-600 mb-1">Fakultas</label>
-                        <select id="input-faculty" class="w-full bg-stone-50 border-2 border-stone-900 rounded-xl px-2 py-2 text-xs font-bold text-stone-900 focus:outline-none">
+                        <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Fakultas Anda</label>
+                        <select id="input-faculty" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-2 py-2 text-xs text-stone-900 focus:outline-none focus:border-[#991B1B]">
                             <option value="FT">Teknik (FT)</option>
                             <option value="FEB">FEB</option>
                             <option value="FISIP">FISIP</option>
@@ -448,28 +412,28 @@
 
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-[10px] font-black uppercase text-stone-600 mb-1">Harga (Rp)</label>
-                        <input type="number" id="input-price" required placeholder="50000" class="w-full bg-stone-50 border-2 border-stone-900 rounded-xl px-3 py-2 text-xs font-bold text-stone-900 focus:outline-none">
+                        <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Harga (Rp)</label>
+                        <input type="number" id="input-price" required placeholder="50000" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-xs text-stone-900 focus:outline-none focus:border-[#991B1B]">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-black uppercase text-stone-600 mb-1">Nama Penjual</label>
-                        <input type="text" id="input-seller" required placeholder="Nama Anda" class="w-full bg-stone-50 border-2 border-stone-900 rounded-xl px-3 py-2 text-xs font-bold text-stone-900 focus:outline-none">
+                        <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Nama Penjual</label>
+                        <input type="text" id="input-seller" required placeholder="Nama Anda" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-xs text-stone-900 focus:outline-none focus:border-[#991B1B]">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-[10px] font-black uppercase text-stone-600 mb-1">Titik COD Kampus</label>
-                    <input type="text" id="input-location" required placeholder="Contoh: Perpustakaan Pusat / Kantin FT" class="w-full bg-stone-50 border-2 border-stone-900 rounded-xl px-3 py-2 text-xs font-bold text-stone-900 focus:outline-none">
+                    <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Titik COD Kampus</label>
+                    <input type="text" id="input-location" required placeholder="Contoh: Perpustakaan Pusat / Kantin FT" class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-xs text-stone-900 focus:outline-none focus:border-[#991B1B]">
                 </div>
 
                 <div>
-                    <label class="block text-[10px] font-black uppercase text-stone-600 mb-1">Catatan Kondisi</label>
-                    <textarea id="input-desc" rows="2" placeholder="Catatan minus atau fisik barang..." class="w-full bg-stone-50 border-2 border-stone-900 rounded-xl px-3 py-2 text-xs font-bold text-stone-900 focus:outline-none"></textarea>
+                    <label class="block text-[10px] font-bold text-stone-700 uppercase tracking-wider mb-1">Catatan Kondisi / Minus</label>
+                    <textarea id="input-desc" rows="2" placeholder="Catatan minus atau fisik barang..." class="w-full bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-xs text-stone-900 focus:outline-none focus:border-[#991B1B]"></textarea>
                 </div>
 
                 <div class="pt-2 flex space-x-3">
-                    <button type="button" onclick="closePostModal()" class="flex-1 bg-stone-200 text-stone-900 font-extrabold py-2.5 rounded-2xl border-2 border-stone-900 text-xs uppercase cursor-pointer">Batal</button>
-                    <button type="submit" class="flex-1 bg-[#D9381E] text-white font-extrabold py-2.5 rounded-2xl border-2 border-stone-900 text-xs uppercase cursor-pointer">Tayangkan</button>
+                    <button type="button" onclick="closePostModal()" class="flex-1 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold py-2.5 rounded-xl transition text-xs uppercase cursor-pointer">Batal</button>
+                    <button type="submit" class="flex-1 bg-[#991B1B] hover:bg-stone-900 text-white font-bold py-2.5 rounded-xl transition text-xs uppercase cursor-pointer">Tayangkan</button>
                 </div>
             </form>
         </div>

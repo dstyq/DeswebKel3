@@ -1,42 +1,29 @@
-/* Custom Stylesheet - Neo Pop Playful Retro Style */
+/* Clean Warm Editorial Style */
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F9F8F6;
+    color: #1C1917;
 }
 
-/* Wavy Circle Sticker Badge Style */
-.sticker-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 2px solid #1c1917;
-    box-shadow: 2px 2px 0px 0px #1c1917;
-    z-index: 10;
-    transform: rotate(12deg);
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover .sticker-badge {
-    transform: rotate(0deg) scale(1.1);
-}
-
-/* Hover Card Animation */
 .product-card {
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .product-card:hover {
     transform: translateY(-4px);
-    box-shadow: 6px 6px 0px 0px #1c1917;
+    box-shadow: 0 12px 28px -6px rgba(28, 25, 23, 0.08);
+    border-color: #A8A29E;
 }
 
-/* Custom Scrollbar */
+.product-card img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover img {
+    transform: scale(1.04);
+}
+
+/* Scrollbar styling */
 .scrollbar-none::-webkit-scrollbar {
     display: none;
 }
